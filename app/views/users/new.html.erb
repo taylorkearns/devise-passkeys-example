@@ -1,0 +1,23 @@
+<h1>Sign Up</h1>
+
+<% if current_user %>
+  <h2>You're logged in!</h2>
+  
+  <%= button_to(
+          "Log Out",
+          destroy_user_session_path,
+          method: :delete
+        ) %>
+<% else %>
+  <div data-controller="passwordless">
+    <input data-passwordless-target="email" type="email">
+
+    <button data-action="click->passwordless#register">
+      Create Account
+    </button>
+
+    <button data-action="click->passwordless#login">
+      Log In
+    </button>
+  </div>
+<% end %>
