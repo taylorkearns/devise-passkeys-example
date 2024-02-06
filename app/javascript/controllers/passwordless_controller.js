@@ -38,7 +38,7 @@ export default class extends Controller {
     const { token, error } = await this.client.signinWithAlias(this.emailTarget.value);
 
     if (token) {
-      this.verifyUser(token)
+      await this.verifyUser(token)
     }
   }
 
