@@ -25,7 +25,7 @@ export default class extends Controller {
     const { token, error } = await this.client.register(registerToken)
     
     if (token) {
-      await this.login()
+      await this.verifyUser(token)
     }
 
     if (error) {
@@ -37,6 +37,12 @@ export default class extends Controller {
     // Generate a verification token for the user.
     const { token, error } = await this.client.signinWithAlias(this.emailTarget.value);
 
+    if (token) {
+      this.verifyUser(token)
+    }
+  }
+
+  async verifyUser(token) {
     const verifiedUser = await fetch('/users/sign_in', {
       method: 'post',
       headers: {
