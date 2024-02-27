@@ -8,7 +8,7 @@ Install dependencies:
 bundle
 ```
 
-Follow the instructions (here)[https://admin.passwordless.dev/signup] to create a Passwordless.dev account with Bitwarden. Then create your free application. You will be given three values: An API URL, an API private key, and an API public key. Create a .env file and provide these values:
+Follow the instructions [here](https://admin.passwordless.dev/signup) to create a Passwordless.dev account with Bitwarden. Then create your free application. You will be given three values: An API URL, an API private key, and an API public key. Create a .env file and provide these values:
 
 ```env
 BITWARDEN_PASSWORDLESS_API_URL=
